@@ -1,0 +1,18 @@
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        # M1:bruteforce is going though each element
+        # M2: Sort and check
+        # nums.sort()
+        # for i in range(len(nums)):
+        #     if i+1<=len(nums)-1 and nums[i] == nums[i+1]:
+        #         return True
+        # return False
+
+        # M3: hash set 
+        seen = set()
+        for i in nums:
+            if i in seen:
+                return True
+            else:
+                seen.add(i)
+        return False
